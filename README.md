@@ -53,3 +53,9 @@ class FadeExample extends Component {
   }
 }
 ```
+
+### Props
+| Prop          | Type                      | Description                                                             |
+| :------------ | :------------------------ | :---------------------------------------------------------------------- |
+| out           | bool                      | fades out instead of in - see instructions for usage patterns           |
+| duration      | number                    | the amount of time in seconds that it takes to fade in or out           |
