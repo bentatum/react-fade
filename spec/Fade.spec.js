@@ -25,9 +25,11 @@ describe('Fade', () => {
     expect(style.props.dangerouslySetInnerHTML.__html.indexOf('react-fade-out')).toEqual(-1)
   })
 
-  it('renders an inner span with default style props', () => {
-    expect(inner.type).toEqual('span')
+  it('renders an inner div with default style props', () => {
+    expect(inner.type).toEqual('div')
+    expect(inner.props.style.animationIterationCount).toEqual(1)
     expect(inner.props.style.animationName).toEqual('react-fade-in')
+    expect(inner.props.style.animationTimingFunction).toEqual('ease-in')
   })
 })
 
@@ -47,6 +49,7 @@ describe('Fade in', () => {
 
   it('has correct style props', () => {
     expect(inner.props.style.animationName).toEqual('react-fade-in')
+    expect(inner.props.style.animationTimingFunction).toEqual('ease-in')
   })
 })
 
@@ -66,5 +69,6 @@ describe('Fade out', () => {
 
   it('has correct style props', () => {
     expect(inner.props.style.animationName).toEqual('react-fade-out')
+    expect(inner.props.style.animationTimingFunction).toEqual('ease-out')
   })
 })

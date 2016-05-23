@@ -7,14 +7,14 @@
     "lint": "standard src",
     "prebuild": "rm -rf dist",
     "build": "babel -d dist/ src/",
-    "prepublish": "npm run build",
+    "prepublish": "npm test && npm run build",
     "test": "npm run lint; mocha spec --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bentatum/react-fade.git"
   },
-  "author": "bentatum",
+  "author": "Benjamin Tatum <bentatum@me.com> (http://benjamintatum.com/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bentatum/react-fade/issues"
@@ -34,6 +34,12 @@
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "standard": "^7.1.0"
+  },
+  "dependencies": {
+    "react-prefixr": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react": "*"
   },
   "babel": {
     "presets": [
@@ -56,8 +62,5 @@
       "Else"
     ],
     "parser": "babel-eslint"
-  },
-  "dependencies": {
-    "react-prefixr": "^0.1.0"
   }
 }
