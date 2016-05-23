@@ -53,33 +53,31 @@ const outCss = `
   }
 `
 
-const Fade = (props) =>
-  <span>
+const Fade = ({ children, out, ...props }) =>
+  <span {...props}>
     <style dangerouslySetInnerHTML={{
-      __html: (props.out ? outCss : inCss).replace(/\n/g, '').replace(/\s\s+/g, ' ')
+      __html: (out ? outCss : inCss).replace(/\n/g, '').replace(/\s\s+/g, ' ')
     }} />
     <div
       style={prefixr({
         animationDuration: `${props.duration}s`,
         animationIterationCount: 1,
-        animationName: `react-fade-${(props.out ? 'out' : 'in')}`,
-        animationTimingFunction: props.out ? 'ease-out' : 'ease-in'
+        animationName: `react-fade-${(out ? 'out' : 'in')}`,
+        animationTimingFunction: out ? 'ease-out' : 'ease-in'
       })}
     >
-      {props.children}
+      {children}
     </div>
   </span>
 
 Fade.propTypes = {
   children: PropTypes.node.isRequired,
   duration: PropTypes.number.isRequired,
-  in: PropTypes.bool,
   out: PropTypes.bool
 }
 
 Fade.defaultProps = {
   duration: 1.5,
-  in: true,
   out: false
 }
 

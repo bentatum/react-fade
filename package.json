@@ -1,6 +1,6 @@
 {
   "name": "react-fade",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fades made simple in React.",
   "main": "dist/index.js",
   "scripts": {
