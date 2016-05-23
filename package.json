@@ -1,7 +1,7 @@
 {
   "name": "react-fade",
-  "version": "0.0.2",
-  "description": "Fades made simple in React.",
+  "version": "0.0.3",
+  "description": "Simple fades in React",
   "main": "dist/index.js",
   "scripts": {
     "lint": "standard src",
@@ -19,6 +19,16 @@
   "bugs": {
     "url": "https://github.com/bentatum/react-fade/issues"
   },
+  "keywords": [
+    "fade",
+    "fade in",
+    "fade out",
+    "appear",
+    "disappear",
+    "show",
+    "hide",
+    "react"
+  ],
   "homepage": "https://github.com/bentatum/react-fade#readme",
   "devDependencies": {
     "babel-cli": "^6.9.0",

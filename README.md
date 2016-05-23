@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/react-fade.svg)](https://badge.fury.io/js/react-fade)
+
 # react-fade
 `npm i react-fade`
 
