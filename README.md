@@ -1,6 +1,8 @@
 [![npm version](https://badge.fury.io/js/react-fade.svg)](https://badge.fury.io/js/react-fade)
 
 # react-fade
+A simple fade-in and fade-out action in the form of a React component.
+
 `npm i react-fade`
 
 ## Fade in
