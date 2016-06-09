@@ -6,15 +6,15 @@ A simple fade-in and fade-out action in the form of a React component.
 `npm i react-fade`
 
 ## Fade in
-Children components will start invisible and fade in according to the supplied duration. The default fade duration is 1 second.
+Children components will start invisible and fade into a visible state.
 ```javascript
-<Fade duration={2}>
+<Fade>
   <p>I am so faded</p>
 </Fade>
 ```
 
 ## Fade out
-Note that this will fade out and re-appear if no other styles are applied. The recommended way of fading out is to utilize the *duration* property in conjuction with css display or visibilty. For example:
+Fade out requires some extra code to stay invisble after it's been faded-out. Right now, the recommended way of using `<Fade out/>` is to utilize the *duration* property in conjuction with css display or visibilty. For example:
 ```javascript
 import { default as React, Component } from 'react'
 import { default as Fade } from 'react-fade'
