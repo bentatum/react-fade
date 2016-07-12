@@ -1,5 +1,7 @@
 import { default as React, PropTypes } from 'react'
-import prefixr from 'react-prefixr'
+import { default as css } from 'minify-css-string'
+import Prefixer from 'inline-style-prefixer'
+const prefixer = new Prefixer()
 
 const inCss = `
   @-webkit-keyframes react-fade-in {
@@ -53,14 +55,12 @@ const outCss = `
   }
 `
 
-const Fade = ({ children, out, ...props }) =>
+const Fade = ({ children, duration, out, ...props }) =>
   <span {...props}>
-    <style dangerouslySetInnerHTML={{
-      __html: (out ? outCss : inCss).replace(/\n/g, '').replace(/\s\s+/g, ' ')
-    }} />
+    <style children={css(out ? outCss : inCss)} />
     <div
-      style={prefixr({
-        animationDuration: `${props.duration}s`,
+      style={prefixer.prefix({
+        animationDuration: `${duration}s`,
         animationIterationCount: 1,
         animationName: `react-fade-${(out ? 'out' : 'in')}`,
         animationTimingFunction: out ? 'ease-out' : 'ease-in'

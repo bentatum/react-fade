@@ -21,8 +21,8 @@ describe('Fade', () => {
 
   it('renders a style element with default fade animation', () => {
     expect(style.type).toEqual('style')
-    expect(style.props.dangerouslySetInnerHTML.__html.indexOf('react-fade-in')).toBeGreaterThan(-1)
-    expect(style.props.dangerouslySetInnerHTML.__html.indexOf('react-fade-out')).toEqual(-1)
+    expect(style.props.children.indexOf('react-fade-in')).toBeGreaterThan(-1)
+    expect(style.props.children.indexOf('react-fade-out')).toEqual(-1)
   })
 
   it('renders an inner div with default style props', () => {
@@ -43,8 +43,8 @@ describe('Fade in', () => {
   })
 
   it('has correct fade animation', () => {
-    expect(style.props.dangerouslySetInnerHTML.__html.indexOf('react-fade-in')).toBeGreaterThan(-1)
-    expect(style.props.dangerouslySetInnerHTML.__html.indexOf('react-fade-out')).toEqual(-1)
+    expect(style.props.children.indexOf('react-fade-in')).toBeGreaterThan(-1)
+    expect(style.props.children.indexOf('react-fade-out')).toEqual(-1)
   })
 
   it('has correct style props', () => {
@@ -63,8 +63,8 @@ describe('Fade out', () => {
   })
 
   it('has correct fade animation', () => {
-    expect(style.props.dangerouslySetInnerHTML.__html.indexOf('react-fade-in')).toEqual(-1)
-    expect(style.props.dangerouslySetInnerHTML.__html.indexOf('react-fade-out')).toBeGreaterThan(-1)
+    expect(style.props.children.indexOf('react-fade-in')).toEqual(-1)
+    expect(style.props.children.indexOf('react-fade-out')).toBeGreaterThan(-1)
   })
 
   it('has correct style props', () => {

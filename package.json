@@ -1,6 +1,6 @@
 {
   "name": "react-fade",
-  "version": "0.0.3",
+  "version": "1.1.0",
   "description": "Simple fades in React",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "prebuild": "rm -rf dist",
     "build": "babel -d dist/ src/",
     "prepublish": "npm test && npm run build",
-    "test": "npm run lint; mocha spec --compilers js:babel-register"
+    "test": "npm run lint && mocha spec --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
@@ -31,24 +31,30 @@
   ],
   "homepage": "https://github.com/bentatum/react-fade#readme",
   "devDependencies": {
-    "babel-cli": "^6.9.0",
-    "babel-eslint": "^6.0.4",
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.1.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
+    "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "commitizen": "^2.8.2",
+    "cz-conventional-changelog": "^1.1.6",
     "eslint-plugin-jsx-control-statements": "^2.1.1",
-    "expect": "^1.20.1",
+    "expect": "^1.20.2",
+    "ghooks": "^1.3.2",
+    "inline-style-prefixer": "^2.0.1",
     "jsx-control-statements": "^3.1.2",
-    "mocha": "^2.4.5",
-    "react": "^15.1.0",
-    "react-addons-test-utils": "^15.1.0",
-    "standard": "^7.1.0"
+    "mocha": "^2.5.3",
+    "react": "^15.2.1",
+    "react-addons-test-utils": "^15.2.1",
+    "standard": "^7.1.2",
+    "validate-commit-msg": "^2.6.1"
   },
   "dependencies": {
-    "react-prefixr": "^0.1.0"
+    "minify-css-string": "^1.0.0"
   },
   "peerDependencies": {
+    "inline-style-prefixer": "^2.0.1",
     "react": "*"
   },
   "babel": {
@@ -72,5 +78,25 @@
       "Else"
     ],
     "parser": "babel-eslint"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "issue",
+        "master",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": ""
+    }
   }
 }
