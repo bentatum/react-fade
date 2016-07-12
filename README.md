@@ -1,13 +1,23 @@
-[![npm version](https://badge.fury.io/js/react-fade.svg)](https://badge.fury.io/js/react-fade)
+[![npm][npm-image]][npm-url]
+[![travis][travis-image]][travis-url]
+[![standard][standard-image]][standard-url]
+
+[npm-image]: https://img.shields.io/npm/v/react-fade.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/react-fade
+[travis-image]: https://img.shields.io/travis/bentatum/react-fade.svg?style=flat-square
+[travis-url]: https://travis-ci.org/bentatum/react-fade
+[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
+[standard-url]: http://npm.im/standard
 
 # react-fade
-A simple fade-in and fade-out action in the form of a React component.
+
+Simple fades in React
 
 `npm i react-fade`
 
 ## Fade in
 Children components will start invisible and fade into a visible state.
-```javascript
+```js
 <Fade>
   <p>I am so faded</p>
 </Fade>
@@ -15,7 +25,7 @@ Children components will start invisible and fade into a visible state.
 
 ## Fade out
 Fade out requires some extra code to stay invisble after it's been faded-out. Right now, the recommended way of using `<Fade out/>` is to utilize the *duration* property in conjuction with css display or visibilty. For example:
-```javascript
+```js
 import { default as React, Component } from 'react'
 import { default as Fade } from 'react-fade'
 

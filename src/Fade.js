@@ -1,6 +1,6 @@
 import { default as React, PropTypes } from 'react'
 import { default as css } from 'minify-css-string'
-import Prefixer from 'inline-style-prefixer'
+import { default as Prefixer } from 'inline-style-prefixer'
 const prefixer = new Prefixer()
 
 const inCss = `
